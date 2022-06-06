@@ -6,8 +6,11 @@ class CustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [_Title(), _InputSearch()],
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      child: Column(
+        children: const [_Title(), SizedBox(height: 10), _InputSearch()],
+      ),
     );
   }
 }
