@@ -18,7 +18,7 @@ class HomeLayout extends StatelessWidget {
           children: const [
             CustomAppBar(),
             Expanded(child: PokemonList()),
-            BottomAppBar()
+            CustomBottomNavigation()
           ],
         ),
       ),
