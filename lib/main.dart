@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pokedex_coco_version/routes/routes.dart';
 import 'package:pokedex_coco_version/themes/themes.dart';
 
@@ -9,11 +10,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'PodeDex',
       initialRoute: AppRoutes.initialRoute,
-      routes: AppRoutes.routes,
+      getPages: AppRoutes.pages,
       theme: AppTheme.defaultTheme,
     );
   }
