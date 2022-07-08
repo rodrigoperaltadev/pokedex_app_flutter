@@ -10,6 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(PokemonController());
+    Get.put(HomeController());
 
     return const Scaffold(
       body: HomeLayout(),

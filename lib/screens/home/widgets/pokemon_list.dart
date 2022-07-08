@@ -25,7 +25,7 @@ class PokemonList extends StatelessWidget {
 }
 
 class _List extends StatefulWidget {
-  final List<Pokemon> pokemons;
+  final List<PokemonItem> pokemons;
 
   const _List({Key? key, required this.pokemons}) : super(key: key);
 
@@ -34,7 +34,7 @@ class _List extends StatefulWidget {
 }
 
 class _ListState extends State<_List> {
-  final ScrollController scrollController = new ScrollController();
+  final ScrollController scrollController = ScrollController();
   final pokemonController = Get.find<PokemonController>();
 
   @override
@@ -66,7 +66,7 @@ class _ListState extends State<_List> {
 }
 
 class _PokemonListItem extends StatelessWidget {
-  final Pokemon pokemon;
+  final PokemonItem pokemon;
 
   const _PokemonListItem({
     Key? key,
@@ -84,7 +84,7 @@ class _PokemonListItem extends StatelessWidget {
             src: pokemon.image,
           ),
           Expanded(child: _PokemonListItemName(pokemon: pokemon)),
-          _PokemonListItemType(),
+          const _PokemonListItemType(),
         ],
       )),
     );
@@ -100,13 +100,14 @@ class _PokemonListItemImage extends StatelessWidget {
     return FadeInImage(
         fit: BoxFit.cover,
         height: 150,
-        placeholder: AssetImage('assets/pokeball.png'),
+        width: 90,
+        placeholder: const AssetImage('assets/pokeball.png'),
         image: NetworkImage(src));
   }
 }
 
 class _PokemonListItemName extends StatelessWidget {
-  final Pokemon pokemon;
+  final PokemonItem pokemon;
   const _PokemonListItemName({Key? key, required this.pokemon})
       : super(key: key);
 

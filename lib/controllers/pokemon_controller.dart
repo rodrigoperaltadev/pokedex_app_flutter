@@ -9,7 +9,7 @@ class PokemonController extends GetxController {
     fetchPokemonList();
   }
 
-  RxList<Pokemon> pokemons = <Pokemon>[].obs;
+  var pokemons = <PokemonItem>[].obs;
   RxInt limit = 20.obs;
   RxInt currentOffset = 0.obs;
   RxBool isLoading = false.obs;
